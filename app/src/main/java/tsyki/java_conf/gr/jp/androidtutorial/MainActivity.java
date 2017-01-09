@@ -2,101 +2,46 @@ package tsyki.java_conf.gr.jp.androidtutorial;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // XXX ここでoperationは+、-などの文字列にしたいが、equalsを使う必要があるので避ける
-        int operation = 0;
-        int num1 = 2;
-        int num2 = 3;
-        int calcResult;
-        if (operation == 0) {
-            calcResult = num1 + num2;
-        } else {
-            calcResult = num1 - num2;
-        }
-        System.out.println("if " + calcResult);
+        findViewById(R.id.addButton).setOnClickListener(this);
+        findViewById(R.id.minusButton).setOnClickListener(this);
+    }
 
-        switch (operation) {
-            case 0:
-                calcResult = num1 + num2;
+    @Override
+    public void onClick(View view) {
+        EditText numberText1 = (EditText) findViewById(R.id.numberText1);
+        EditText numberText2 = (EditText) findViewById(R.id.numberText2);
+        String numberString1 = numberText1.getText().toString();
+        String numberString2 = numberText2.getText().toString();
+        // TODO ここで空文字チェックが必要
+        int number1 = Integer.parseInt(numberString1);
+        int number2 = Integer.parseInt(numberString2);
+
+        TextView textView = (TextView) findViewById(R.id.resultText);
+
+        int clickedWidgetId = view.getId();
+        int calcResult;
+        switch(clickedWidgetId){
+            case R.id.addButton:
+                calcResult = number1 + number2;
                 break;
-            case 1:
-                calcResult = num1 - num2;
+            case R.id.minusButton:
+                calcResult = number1 - number2;
                 break;
             default:
                 calcResult = 0;
                 break;
         }
-        System.out.println("switch " + calcResult);
-
-        // 10回繰り返し
-        int sum = 0;
-        for (int i = 0; i < 10; i++) {
-            // XXX ここは標準出力などにしたい
-            sum = sum + 1;
-        }
-        System.out.println("for " + sum);
-
-        // 1から10の合計
-        sum = 0;
-        for (int i = 1; i <= 10; i++) {
-            sum += i;
-        }
-        System.out.println("for2 " + sum);
-
-        // 逆バージョン
-        sum = 0;
-        for (int i = 10; i > 0; i--) {
-            sum += i;
-        }
-        System.out.println("for3 " + sum);
-
-        // conitnue
-        // 奇数のみ表示
-        for (int i = 0; i < 10; i++) {
-            if (i % 2 == 1) {
-                System.out.println(i);
-            }
-        }
-        // while
-        sum = 0;
-        int i = 1;
-        while (i <= 10) {
-            sum += i;
-            i++;
-        }
-        System.out.println("while " + sum);
-
-        // 四則演算サンプル
-        // 引き算(減算)
-        // int calcResult = num1 - num2;
-        // 掛け算(乗算)
-        // int calcResult = num1 * num2;
-        // 計算順序の制御
-        // int calcResult = 1 + 2 * 3;
-        // int calcResult = (1 + 2) * 3;
-        // 割り算(除算)
-        // 上手くいかない例
-        // int calcResult = num1 / num2;
-        // 小数型を使う
-        // double num1 = 2;
-        // double num2 = 3;
-        // double calcResult = num1 / num2;
-        // XXX BigDecimalを使った丸め方の指定はここではやらない
-
-        // 計算結果を文字列型に変換
-        String calcResultString = String.valueOf(calcResult);
-        // レイアウト
-        // においたテキスト部品を取得(おまじない)
-        TextView textView = (TextView) findViewById(R.id.text);
-        // 計算結果を画面に表示させる
-        textView.setText(calcResultString);
+        textView.setText(String.valueOf(calcResult));
     }
 }

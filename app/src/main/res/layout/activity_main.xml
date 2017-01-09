@@ -10,9 +10,56 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="tsyki.java_conf.gr.jp.androidtutorial.MainActivity">
 
-    <TextView
-        android:id="@+id/text"
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:inputType="number"
+        android:ems="10"
+        android:layout_below="@+id/numberText1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="22dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="102dp"
+        android:id="@+id/numberText2" />
+
+    <Button
+        android:text="+"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/numberText1"
+        android:layout_alignLeft="@+id/numberText2"
+        android:layout_alignStart="@+id/numberText2"
+        android:layout_marginTop="25dp"
+        android:id="@+id/addButton" />
+
+    <Button
+        android:text="-"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/addButton"
+        android:layout_alignRight="@+id/numberText2"
+        android:layout_alignEnd="@+id/numberText2"
+        android:id="@+id/minusButton" />
+
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/numberText2"
+        android:layout_alignStart="@+id/numberText2"
+        android:layout_marginBottom="184dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:layout_marginTop="45dp"
+        android:id="@+id/numberText1"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/addButton"
+        android:layout_alignStart="@+id/addButton" />
 </RelativeLayout>
