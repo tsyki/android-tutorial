@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -10,8 +11,21 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="tsyki.java_conf.gr.jp.androidtutorial.MainActivity">
 
-    <TextView
+    <Button
+        android:text="おみくじを引く"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="65dp"
+        android:id="@+id/drawButton" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/omikuji"
+        android:id="@+id/imageView"
+        android:layout_marginBottom="62dp"
+        android:layout_above="@+id/drawButton"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
