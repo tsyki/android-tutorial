@@ -24,11 +24,11 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         switch(result){
             case 0:
                 imageResource = R.drawable.daikichi;
-                message = "大吉！";
+                message = "待人：必ず来る\n仕事：楽しい";
                 break;
             case 1:
                 imageResource = R.drawable.kichi;
-                message = "吉！";
+                message = "ラッキーアイテム：おもち";
                 break;
             case 2:
                 imageResource = R.drawable.suekichi;

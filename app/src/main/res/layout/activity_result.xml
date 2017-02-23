@@ -31,13 +31,15 @@
 
     <TextView
         android:text="TextView"
+        android:width="600px"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/backButton"
-        android:layout_alignLeft="@+id/backButton"
-        android:layout_alignStart="@+id/backButton"
-        android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp"
         android:layout_marginBottom="64dp"
-        android:id="@+id/resultMessageText" />
+        android:id="@+id/resultMessageText"
+        android:gravity="center_horizontal"
+        android:layout_alignRight="@+id/backButton"
+        android:layout_alignEnd="@+id/backButton"
+        android:layout_alignLeft="@+id/backButton"
+        android:layout_alignStart="@+id/backButton" />
 </RelativeLayout>
