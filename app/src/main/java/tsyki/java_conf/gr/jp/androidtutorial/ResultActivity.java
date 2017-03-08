@@ -21,14 +21,15 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         int imageResource;
         String message;
         // おみくじ画面から受け取った結果に応じて判定
-        switch(result){
+        // FIXME キャプチャ用に大吉と吉のみ出るようにしてある
+        switch(result%2){
             case 0:
                 imageResource = R.drawable.daikichi;
-                message = "待人：必ず来る\n仕事：楽しい";
+                message = "運命の人と出会えるかも\nラッキープレイス：バス停";
                 break;
             case 1:
                 imageResource = R.drawable.kichi;
-                message = "ラッキーアイテム：おもち";
+                message = "新しいことに挑戦すると運気上昇\nラッキーアイテム：おもち、うどん";
                 break;
             case 2:
                 imageResource = R.drawable.suekichi;
